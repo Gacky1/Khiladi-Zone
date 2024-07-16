@@ -180,6 +180,17 @@ img {
     width: 150px;
     position: absolute;
   }
+  .update{
+    text-align: center;
+    display: flex;
+    margin: 0 30% 40px 30%;
+    font-weight: bold;
+  }
+  
+  .conditions{
+    text-align: justify;
+  }
+
 }
 
 .nav__list {
@@ -632,10 +643,6 @@ img {
   
   .conditions{
     text-align: justify;
-  }
-  
-  .conditions ul{
-    list-style-type: disc;
   }
 
 }
