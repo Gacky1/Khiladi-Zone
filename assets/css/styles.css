@@ -808,3 +808,21 @@ img {
   font-size: 16px;
   cursor: pointer;
 }
+
+/* Terms and conditions */
+
+.update{
+  text-align: center;
+  display: flex;
+  margin: 0 40% 40px 40%;
+  font-weight: bold;
+}
+
+.conditions{
+  margin: 70px 70px;
+  text-align: justify;
+}
+
+.conditions ul{
+  list-style-type: disc;
+}
