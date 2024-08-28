@@ -852,3 +852,54 @@ img {
 .conditions ul{
   list-style-type: disc;
 }
+
+
+/* Testimonial */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+  background-color: transparent;
+  color: white;
+  border-radius: 8px;
+}
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.carousel-item img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+.star-rating {
+  margin: 10px 0;
+}
+.star-rating span {
+  color: gold;
+}
+.review-text {
+  font-style: italic;
+  text-align: center;
+  margin: 10px 0;
+}
+.review-date {
+  font-size: 0.9em;
+  color: gray;
+}
+.highlighted {
+  border: 2px solid white;
+  border-radius: 8px;
+}

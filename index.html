@@ -253,11 +253,117 @@
 
                 <!--=============== Testimonial ===============-->
         <section class="discount section">
-                    <div>
-                        <h2 class="section__title section__title-gradient">Testimonials</h2>
+                    <!-- <div>
                         <script async type="text/javascript" src="https://testimonial.to/js/widget-embed.js"></script>
                         <div class="testimonial-to-embed" data-url="https://embed-v2.testimonial.to/c/khiladi-zone?theme=dark&has_wall=yes&transparentBg" data-allow="camera;microphone" data-resize="true"></div>
+                    </div> -->
+                    <div class="carousel-container">
+                        <h2 class="section__title section__title-gradient">Testimonials</h2>
+
+                        <div class="carousel-slide">
+                            <div class="carousel-item highlighted">
+                                <img src="/assets/img/sandeep_kumar_large.webp" alt="Reviewer 1">
+                                <div class="star-rating">
+                                    ★★★★★
+                                </div>
+                                <div class="review-text">
+                                    "Khiladi Zone ne gaming ka maza double kar diya hai! Yaha par sab kuch milta hai - entertainment aur earning dono."
+                                </div>
+                                <div class="review-date">
+                                    August 29, 2024
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/r2.avif" alt="Reviewer 2">
+                                <div class="star-rating">
+                                    ★★★☆☆
+                                </div>
+                                <div class="review-text">
+                                    "Bahut hi zabardast app hai! Games khel kar paise kamao aur apne skills ko bhi improve karo. Must try!"
+                                </div>
+                                <div class="review-date">
+                                    August 15, 2024
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/assets/img/r3.jpeg" alt="Reviewer 3">
+                                <div class="star-rating">
+                                    ★★★★★
+                                </div>
+                                <div class="review-text">
+                                    "Superb platform for gamers! Yaha aapko competitions aur rewards dono milte hain. Maza aa gaya!"
+                                </div>
+                                <div class="review-date">
+                                    August 10, 2024
+                                </div>
+                            </div>
+                            <!-- Add more items here -->
+                            <div class="carousel-item">
+                                <img src="assets/img/r4.jpeg" alt="Reviewer 2">
+                                <div class="star-rating">
+                                    ★★★★☆
+                                </div>
+                                <div class="review-text">
+                                    "Meri favourite gaming app! Easy to use hai aur prizes bhi awesome milte hain. Sab ko recommend karta hoon."
+                                </div>
+                                <div class="review-date">
+                                    August 19, 2024
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/r5.webp" alt="Reviewer 3">
+                                <div class="star-rating">
+                                    ★★★★★
+                                </div>
+                                <div class="review-text">
+                                    "Yeh app gaming lovers ke liye best hai! Earn karne ka itna easy tareeka pehle kabhi nahi dekha."
+                                </div>
+                                <div class="review-date">
+                                    August 24, 2024
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/r6.webp" alt="Reviewer 3">
+                                <div class="star-rating">
+                                    ★★★★★
+                                </div>
+                                <div class="review-text">
+                                    "Khiladi Zone par games khelna aur jeetne ka experience hi alag hai! Fun and earning, dono ka perfect combo."
+                                </div>
+                                <div class="review-date">
+                                    September 1, 2024
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/r7.webp" alt="Reviewer 3">
+                                <div class="star-rating">
+                                    ★★★★★
+                                </div>
+                                <div class="review-text">
+                                    "Amazing app for all gamers! Har game ka level high hai aur jeetne par prizes bhi zabardast milte hain."
+                                </div>
+                                <div class="review-date">
+                                    September 6, 2024
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                
+                    <script>
+                        const slideInterval = 3000; // 3 seconds
+                        let currentIndex = 0;
+                        const items = document.querySelectorAll('.carousel-item');
+                        const totalItems = items.length;
+                
+                        function showNextSlide() {
+                            items[currentIndex].classList.remove('highlighted');
+                            currentIndex = (currentIndex + 1) % totalItems;
+                            items[currentIndex].classList.add('highlighted');
+                            document.querySelector('.carousel-slide').style.transform = `translateX(-${currentIndex * 100}%)`;
+                        }
+                
+                        setInterval(showNextSlide, slideInterval);
+                    </script>
         </section>
 
 
