@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Free Fire Room Host Application Form</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+	<style>
+
+		form {
+			width: 50%;
+			margin: 40px auto;
+			padding: 20px;
+			/* background-color: #fff; */
+			border: 1px solid #ddd;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		input, textarea {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 20px;
+			border: 1px solid #ccc;
+		}
+		button[type="submit"] {
+			background-color: #ff0000;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		button[type="submit"]:hover {
+			background-color: #ff0000;
+		}
+	</style>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+    <!--=============== REMIX ICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- terms-and-conditions.html -->
+
+    <!-- Header section -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <img src="assets/img/logo.png" alt="">
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link active-link">Home</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-function-line"></i>
+            </div>
+        </nav>
+
+    </header>
+	<form id="applicationForm">
+		<h2>Free Fire Room Host Application Form</h2>
+		<section>
+			<h3>Personal Details</h3>
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" placeholder="Enter your name" required>
+			<label for="age">Age:</label>
+			<input type="number" id="age" name="age" placeholder="Enter your age" required>
+		</section>
+		<section>
+			<label for="contact-number">Contact Number:</label>
+			<input type="tel" id="contact-number" name="contact-number" placeholder="Enter your contact number" required>
+		</section>
+		<section>
+			<h3>Free Fire Experience</h3>
+			<label for="experience">Past Experience as a Free Fire Room Host:</label>
+			<textarea id="experience" name="experience" placeholder="Share your experience as a Free Fire room host" required></textarea>
+		</section>
+		<section>
+			<label for="motivation">Why do you want to become a Free Fire room host?(optional)</label>
+			<textarea id="motivation" name="motivation" placeholder="Share your motivation"></textarea>
+		</section>
+		<button type="submit">Submit Application</button>
+	</form>
+    <script>
+
+		const form = document.getElementById("applicationForm");
+
+		const webhookURL = "https://discord.com/api/webhooks/1285259556636725258/MQNAwmR61O8wdoHfhZsmw9jspvU09biDd_ncNd3RDGl-qBK-6mvQ6_RKNo-ZekcscbVn";
+
+
+		form.addEventListener("submit", (event) => {
+
+			event.preventDefault();
+
+
+			const formData = new FormData(form);
+
+			const data = {
+
+				embeds: [
+
+					{
+
+						title: "New Free Fire Room Host Application",
+
+						fields: [
+
+							{ name: "Name", value: formData.get("name") },
+
+							{ name: "Age", value: formData.get("age") },
+
+							{ name: "Contact Number", value: formData.get("contact-number") },
+
+							{ name: "Experience as a Free Fire Room Host", value: formData.get("experience") },
+
+							{ name: "Motivation", value: formData.get("motivation") },
+
+
+						],
+
+						color: 4886754,
+
+						timestamp: new Date().toISOString()
+
+					}
+
+				]
+
+			};
+
+
+			fetch(webhookURL, {
+
+				method: "POST",
+
+				body: JSON.stringify(data),
+
+				headers: { "Content-Type": "application/json" }
+
+			})
+
+				.then((response) => {
+
+					if (!response.ok) {
+
+						throw new Error("Failed to send the application.");
+
+					}
+
+					alert("Application submitted successfully!");
+
+				})
+
+				.catch((error) => {
+
+					console.error(error);
+
+					alert("Failed to submit the application. Please try again later.");
+
+				});
+
+		});
+
+	</script>
+</body>
+</html>
